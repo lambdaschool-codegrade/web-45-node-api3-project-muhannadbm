@@ -64,8 +64,8 @@ router.post('/:id/posts',validateUserId,validatePost, async(req, res) => {
   // this needs a middleware to verify user id
   // and another middleware to check that the request body is valid
   req.body.user_id = req.params.id
-  // let my_post = await Post.insert(req.body)
-  // res.status(201).json(my_post)
+  let my_post = await Post.insert(req.body)
+  res.status(201).json(my_post)
 });
 
 // eslint-disable-next-line
